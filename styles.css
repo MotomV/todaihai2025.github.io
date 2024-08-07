@@ -1,0 +1,53 @@
+.wrapper {
+    margin: 20px;
+}
+
+body {
+    background-image:url("/pictures/Yasudakodo-Naibu.jpg");
+    }
+
+
+.FromChairperson {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.introduction {
+    display: flex; /* Use flexbox for horizontal layout */
+    align-items: flex-start; /* Align items to the top */
+    gap: 20px; /* Add spacing between items */
+}
+
+.photo-item {
+    display: block;
+    width: 300px; /* Fixed width for images */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px;
+    margin-bottom: 15px; /* Space between image and text */
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    border: 1px solid #ccc;
+}
+
+.photo-text {
+    text-align: center; /* Center text alignment */
+}
+
+.photo-text h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.5em;
+}
+
+.intro-text {
+    max-width: 600px; /* Limit maximum width of text */
+    text-align: justify; /* Justify text for better readability */
+}
+
+.intro-text p {
+    margin: 0 0 10px 0;
+}
+
+.serif-name {
+    font-family: serif; /* フォントをserifに設定 */
+}

@@ -1,37 +1,73 @@
-.wrapper {
-    margin: 20px;
+body {
+    font-family: Arial, sans-serif;
+    color: #f4f4f4;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #000000 !important; /* 背景色を黒に設定 */
 }
 
-body {
-    background-image:url("/pictures/Yasudakodo-Naibu.jpg");
-    }
 
+.wrapper {
+    margin: 40px;
+}
+
+.event-container {
+    display: flex;
+    justify-content: flex-start; /* 左揃えに配置 */
+    align-items: center;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #575757;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.event-caption {
+    flex: 1;
+    margin-right: 20px; /* 写真との間隔を空ける */
+}
+
+.photo-Yasudakodo-Naibu img {
+    max-width: 400px; /* 写真の最大幅を指定 */
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
 
 .FromChairperson {
     display: flex;
-    flex-direction: column;
-    gap: 40px;
+    flex-direction: column; /* 各introductionを縦に並べる */
+    gap: 40px; /* 各introduction間のスペースを空ける */
     margin-top: 20px;
 }
 
 .introduction {
-    display: flex; /* Use flexbox for horizontal layout */
-    align-items: flex-start; /* Align items to the top */
-    gap: 20px; /* Add spacing between items */
+    display: flex; /* 各introduction内で写真とテキストを横に並べる */
+    align-items: center; /* 垂直方向に中央揃え */
+    gap: 20px; /* 写真とテキストの間のスペース */
+}
+
+.photos {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 写真と名前を中央揃え */
+    justify-content: flex-start
 }
 
 .photo-item {
-    display: block;
-    width: 300px; /* Fixed width for images */
-    height: auto; /* Maintain aspect ratio */
+    width: 300px; /* 固定幅 */
+    height: 400px; /* 固定高さ */
+    object-fit: cover;
     border-radius: 5px;
-    margin-bottom: 15px; /* Space between image and text */
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
-    border: 1px solid #ccc;
+    margin-bottom: 10px; /* 写真と名前の間のスペース */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid #fff6f6;
 }
 
 .photo-text {
-    text-align: center; /* Center text alignment */
+    text-align: center; /* 名前を中央揃え */
 }
 
 .photo-text h3 {
@@ -40,8 +76,8 @@ body {
 }
 
 .intro-text {
-    max-width: 600px; /* Limit maximum width of text */
-    text-align: justify; /* Justify text for better readability */
+    max-width: 600px; /* テキストの最大幅を制限 */
+    text-align: justify; /* テキストの均等配置 */
 }
 
 .intro-text p {
@@ -50,4 +86,8 @@ body {
 
 .serif-name {
     font-family: serif; /* フォントをserifに設定 */
+}
+
+.Century-name {
+    font-family: Century;
 }

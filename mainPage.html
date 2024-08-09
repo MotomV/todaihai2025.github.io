@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <!--==============styles.cssにて制御===============-->
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="styles2.css">
     <!--==============レイアウトを制御する独自のCSSを読み込み===============-->
     <link rel="stylesheet" type="text/css" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/reset.css">
     <link rel="stylesheet" type="text/css" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/5-4-1/css/5-4-1.css"> 
@@ -21,20 +22,84 @@
         <li><a href="#drink">About Us</a></li>
         <li><a href="#dinner">英語スピーチの型について</a></li>
     </ul>
+    <h1>第19回東大杯</h1>
 
-    <div id="lunch" class="area">
-        <h1>第19回東大杯</h1>
-        <li>開催概要</li>
-          <div class="event-container">
-            <div class="event-caption">
-              <h2>イベント詳細</h2>
-              <p><strong>開催地:</strong> 東京大学本郷キャンパス 安田講堂</p>
-              <p><strong>開催日時:</strong> 2025年2月23日（日）</p>
-            </div>
-          <div class="photo-Yasudakodo-Naibu">
-              <img src="pictures/Yasudakodo-Naibu.jpg" alt="安田講堂内部の写真">
-          </div>
+    <div class="slideshow-container">
+        <!-- スライド1 -->
+        <div class="slide">
+          <img src="pictures/Slideshow1.jpeg" alt="Slide 1"> <!-- スライド1の画像 -->
+        </div>
+    
+        <!-- スライド2 -->
+        <div class="slide">
+          <img src="pictures/Slideshow2.jpeg" alt="Slide 2"> <!-- スライド2の画像 -->
+        </div>
+    
+        <!-- スライド3 -->
+        <div class="slide">
+          <img src="pictures/Slideshow3.jpeg" alt="Slide 3"> <!-- スライド3の画像 -->
+        </div>
+    
+        <!-- 前のスライドボタン -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    
+        <!-- 次のスライドボタン -->
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
       </div>
+    
+      <!-- ドットナビゲーション -->
+      <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+      </div>
+    
+      <script>
+        // JavaScriptコードはスライドショーの動作を制御します
+        let slideIndex = 1;
+        showSlides(slideIndex);
+    
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+    
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+    
+        function showSlides(n) {
+          let i;
+          let slides = document.getElementsByClassName("slide");
+          let dots = document.getElementsByClassName("dot");
+    
+          if (n > slides.length) { slideIndex = 1 }
+          if (n < 1) { slideIndex = slides.length }
+    
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+    
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+    
+          slides[slideIndex - 1].style.display = "block";
+          dots[slideIndex - 1].className += " active";
+        }
+      </script>
+  </div>
+    
+  <div id="lunch" class="area">
+          <div class="event-container">
+                <div class="event-caption">
+                    <h2>イベント詳細</h2>
+                    <p><strong>開催地:</strong> 東京大学本郷キャンパス 安田講堂</p>
+                    <p><strong>開催日時:</strong> 2025年2月23日（日）</p>
+                </div>
+                <div class="photo-Yasudakodo-Naibu">
+                    <img src="pictures/Yasudakodo-Naibu.jpg" alt="安田講堂内部の写真">
+                </div>
+            </div>
         <h1 class="Century-name">実長より</h1>
         <div class="FromChairperson">
             <div class="introduction">

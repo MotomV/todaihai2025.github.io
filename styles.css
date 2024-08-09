@@ -9,20 +9,42 @@ body {
 
 
 .wrapper {
-    margin: 40px;
+    margin: 400px;
 }
+
+.area {
+    position: relative;
+    z-index: 1; /* event-containerより背面に配置 */
+    margin-top: 20px; /* スライドショーからの間隔を追加 */
+    padding: 20px;
+    background-color: #f8f8f8; /* 必要なら背景色を設定 */
+}
+
+
+
+/*
+.area {
+    position: relative;
+    z-index: 1; /* 他の要素より前に表示 */
+    /*margin: 20px 0; /* 上下に余白を追加 */
+    /*padding: 20px; /* 内側の余白を設定 */
+    /*background-color: #f8f8f8; /* 背景色を設定して他と区別 */
+    /*box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* 影を追加して目立たせる */
+/*}*/
 
 .event-container {
     display: flex;
-    justify-content: flex-start; /* 左揃えに配置 */
-    align-items: center;
+    justify-content: center; /* 中央揃え */
+    align-items: center; /* 垂直方向に中央揃え */
     max-width: 1000px;
     margin: 40px auto;
     padding: 20px;
     background-color: #ffffff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+    z-index: 1; /* slideshow-containerより背面に配置 */
 }
+
 
 .event-caption {
     flex: 1;

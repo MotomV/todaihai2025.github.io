@@ -1,12 +1,87 @@
+/* スライドショー関連のスタイル */
+.slideshow-container {
+    position: relative;
+    max-width: 50%;
+    margin: 40px auto; /* スライドショーと他の要素の間に余白を設定 */
+    background-color: #000; /* 黒色 */
+    z-index: 2; /* areaより前面に配置 */
+}
+
+/* 各スライドのスタイル */
+.slide {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000; /* 黒色 */
+}
+
+/* スライド画像のスタイル */
+.slide img {
+    width: 100%;
+    height: auto;
+}
+
+/* 前後ボタンのスタイル */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: #fff; /* ボタン文字色を白に */
+    background-color: rgba(0, 0, 0, 0.5); /* 半透明の黒背景 */
+    border: none;
+    border-radius: 0 3px 3px 0;
+    font-weight: bold;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+/* 左側のボタン */
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* 右側のボタン */
+.next {
+    right: 0;
+    border-radius: 3px;
+}
+
+/* ボタンのホバー時のスタイル */
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* ホバー時の背景色をダークに */
+}
+
+/* ドットナビゲーションのスタイル */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #fff; /* ドットの色を白に */
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+/* アクティブなドットのスタイル */
+.active {
+    background-color: #717171; /* アクティブなドットの色 */
+}
+
+/* 全体の背景色を黒に設定 */
 body {
     font-family: Arial, sans-serif;
     color: #000000;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #ffffff !important; /* 背景色を黒に設定しようとしたが断念 */
+    background-color: #000; /* 背景色を黒に設定 */
 }
-
 
 .wrapper {
     margin: 400px;
@@ -19,18 +94,6 @@ body {
     padding: 20px;
     background-color: #f8f8f8; /* 必要なら背景色を設定 */
 }
-
-
-
-/*
-.area {
-    position: relative;
-    z-index: 1; /* 他の要素より前に表示 */
-    /*margin: 20px 0; /* 上下に余白を追加 */
-    /*padding: 20px; /* 内側の余白を設定 */
-    /*background-color: #f8f8f8; /* 背景色を設定して他と区別 */
-    /*box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* 影を追加して目立たせる */
-/*}*/
 
 .event-container {
     display: flex;
@@ -45,7 +108,6 @@ body {
     z-index: 1; /* slideshow-containerより背面に配置 */
 }
 
-
 .event-caption {
     flex: 1;
     margin-right: 20px; /* 写真との間隔を空ける */
@@ -59,17 +121,25 @@ body {
 }
 
 .FromChairperson {
-    display: flex;
-    flex-direction: column; /* 各introductionを縦に並べる */
-    gap: 40px; /* 各introduction間のスペースを空ける */
-    margin-top: 20px;
+    display: flex; /* Use flexbox to align children */
+    flex-direction: column; /* Arrange introductions vertically */
+    align-items: center; /* Center the introductions horizontally */
+    gap: 40px; /* Space between introductions */
+    margin: 40px auto; /* Center the container and add top/bottom spacing */
+    padding: 20px; /* Padding inside the container */
+    max-width: 1000px; /* Same maximum width as .event-container */
+    background-color: #ffffff; /* Same background color as .event-container */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Same shadow as .event-container */
+    border-radius: 8px; /* Same border radius as .event-container */
 }
 
+
 .introduction {
-    display: flex; /* 各introduction内で写真とテキストを横に並べる */
-    align-items: center; /* 垂直方向に中央揃え */
-    gap: 20px; /* 写真とテキストの間のスペース */
+    display: flex; /* Arrange photo and text horizontally */
+    align-items: center; /* Vertically center items within introduction */
+    gap: 20px; /* Space between photo and text */
 }
+
 
 .photos {
     display: flex;

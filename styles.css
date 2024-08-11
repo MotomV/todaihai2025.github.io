@@ -1,165 +1,266 @@
-/* スライドショー関連のスタイル */
-.slideshow-container {
-    position: relative;
-    max-width: 50%;
-    margin: 40px auto; /* スライドショーと他の要素の間に余白を設定 */
-    background-color: #000; /* 黒色 */
-    z-index: 2; /* areaより前面に配置 */
-}
-
-/* 各スライドのスタイル */
-.slide {
-    display: none;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: #000; /* 黒色 */
-}
-
-/* スライド画像のスタイル */
-.slide img {
-    width: 100%;
-    height: auto;
-}
-
-/* 前後ボタンのスタイル */
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: #fff; /* ボタン文字色を白に */
-    background-color: rgba(0, 0, 0, 0.5); /* 半透明の黒背景 */
-    border: none;
-    border-radius: 0 3px 3px 0;
-    font-weight: bold;
-    font-size: 18px;
-    transition: background-color 0.3s ease;
-}
-
-/* 左側のボタン */
-.prev {
-    left: 0;
-    border-radius: 3px 0 0 3px;
-}
-
-/* 右側のボタン */
-.next {
-    right: 0;
-    border-radius: 3px;
-}
-
-/* ボタンのホバー時のスタイル */
-.prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.8); /* ホバー時の背景色をダークに */
-}
-
-/* ドットナビゲーションのスタイル */
-.dot {
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #fff; /* ドットの色を白に */
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-}
-
-/* アクティブなドットのスタイル */
-.active {
-    background-color: #717171; /* アクティブなドットの色 */
-}
-
-/* 全体の背景色を黒に設定 */
 body {
     font-family: Arial, sans-serif;
     color: #000000;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #000; /* 背景色を黒に設定 */
+    
+    background-color: rgba(159, 159, 159, 0.332);
+    background-image: url("pictures/Yasudakodo-Naibu2.jpg");
+    background-size: cover; /* 画像をウィンドウ全体に広げる */
+    background-position: center; /* 中央をメインに表示 */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh; /* 縦幅をウィンドウの70%に設定 */
+}
+
+
+
+
+header {
+    width: 100%; /* 幅いっぱいを指定 */
+    height: 50px; /* 高さを50pxに指定 */
+    background: #4f1010; /* 背景色にグレーを指定 */
+    padding: 20px 50px; /* ヘッダーに上下左右それぞれ余白を指定 */
+    box-sizing: border-box; /* padding分を含んで幅を100%にするため */
+    position: fixed; /* ウィンドウを基準に画面に固定 */
+    top: 0; /* 上下の固定位置を上から0pxにする */
+    left: 0; /* 左右の固定位置を左から0pxにする */
+    display: flex; /* 中の要素を横並びにする */
+    align-items: center; /* 中の要素を上下中央に並べる */
+    z-index: 3
+}
+
+header .gnav .menu {
+    display: flex; /* 中の要素を横並びにする */
+}
+
+header .gnav .menu li {
+    list-style: none; /* リストの[・]を消す */
+}
+
+header .gnav .menu li + li {
+    margin-left: 40px; /* メニューそれぞれに間隔をあけるため */
 }
 
 .wrapper {
-    margin: 400px;
+    justify-content: space-between;
+    align-items: flex-start; /* 上下位置を揃える */
+    margin: 10px auto;
+    max-width: 90%; /* コンテンツの最大幅を設定 */
+}
+
+.slogan {
+    font-size: 3.0em;
+    font-family: "游明朝", "YuMincho", serif;
+    font-weight: 600;
+    color: #ffffff;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5); /* 影を追加 */
+    }
+    
+.content {
+    display: flex;
+    flex-direction: column; /* 要素を縦に並べる */
+    max-width: 90%; /* コンテンツの最大幅を設定 */
+    z-index: 2; /* 他の要素より前面に配置 */
+}
+
+.title {
+    font-size: 1.5em; /* タイトルのフォントサイズを設定 */
+    line-height: 1.4; /* 行間を調整 */
+    text-align: left; /* テキストを左揃え */
+    margin-top: 30px;
+    margin-left: 10px; /* 左側に60pxの余白を設定 */
+    color:#f8f8f8
+}
+.Information-slidshow {
+    display: flex;
+    align-items: top; /* 垂直方向に中央揃え */
+    width: 100%; /* コンテナの幅を100%に設定 */
+    margin: 10px auto; /* 上下のマージンを減らして、コンテナを上に配置 */
+    box-sizing: border-box; /* パディングを含めたサイズを設定 */
+    color: #f8f8f8;
+    padding: 10px 0; /* 上下のパディングを追加して少し調整 */
+    position: relative; /* 位置を調整するために相対位置を設定 */
+    top: 0px; /* 上方向に80px移動 */
+}
+
+
+.information {
+    font-family: "游明朝", "YuMincho", serif;
+    font-size: 1.7em; /* テキストのフォントサイズを設定 */
+    line-height: 2.5; /* 行間を調整 */
+    text-align: left; /* テキストを左揃え */
+    margin-left: 20px; /* 左側に20pxの余白を設定 */
+    flex-shrink: 0; /* コンテンツが縮小されないようにする */
+}
+
+.slideshow-container {
+    position: relative;
+    max-width: 50%; /* スライドショーの最大幅を60%に設定 */
+    margin-left: 40px; /* 左側の余白を自動設定 */
+    z-index: 2; /* 他の要素より前面に配置 */
+    overflow: hidden; /* コンテナ内に収まるように */
+    flex-shrink: 0; /* スライドショーが縮小されないようにする */
+}
+
+
+.slide {
+    display: none;
+    position: relative; /* スライド内の要素を相対的に配置 */
+    width: 100%; /* コンテナの幅に合わせる */
+    height: auto; /* 高さを自動調整 */
+}
+
+.slide img {
+    width: 100%; /* スライドの幅に合わせて表示 */
+    height: auto; /* 縦横比を維持 */
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%; /* スライドの中央に配置 */
+    padding: 16px;
+    color: #fff;
+    background-color: rgba(153, 153, 153, 0.5);
+    border: none;
+    font-weight: bold;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    transform: translateY(-50%); /* ボタンの上下位置を中央に調整 */
+}
+
+.prev {
+    left: 10px; /* 左からの距離を設定 */
+}
+
+.next {
+    right: 10px; /* 右からの距離を設定 */
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active {
+    background-color: #717171; /* アクティブなドットの色 */
+}
+
+.dot-container {
+    text-align: center;
+    position: relative;
+    top: -30px; /* スライドの下に配置 */
+}
+
+
+.active {
+    background-color: #717171;
 }
 
 .area {
+    display: block; 
+    visibility: visible;
     position: relative;
-    z-index: 1; /* event-containerより背面に配置 */
-    margin-top: 20px; /* スライドショーからの間隔を追加 */
+    z-index: 1; /* スライドショーより下に配置 */
+    margin-top: 0px;
     padding: 20px;
-    background-color: #f8f8f8; /* 必要なら背景色を設定 */
+    background-color: rgba(159, 159, 159, 0.332);
 }
 
 .event-container {
     display: flex;
-    justify-content: center; /* 中央揃え */
-    align-items: center; /* 垂直方向に中央揃え */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     max-width: 1000px;
     margin: 40px auto;
     padding: 20px;
     background-color: #ffffff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    z-index: 1; /* slideshow-containerより背面に配置 */
+}
+
+.event-information {
+    display: flex; /* フレックスボックスを使用して横並びにする */
+    justify-content: flex-start; /* 子要素を左揃え */
+    align-items: flex-start; /* 子要素を垂直方向に上揃え */
+    width: 100%; /* 親コンテナに合わせた幅 */
 }
 
 .event-caption {
-    flex: 1;
-    margin-right: 20px; /* 写真との間隔を空ける */
+    flex: 1; /* スペースを均等に割り当てる */
+    text-align: left; /* テキストを左揃え */
+    margin-left: 20px; /* 左側に20pxの余白を設定 */
+    padding: 10px; /* 内側に余白を追加 */
+    box-sizing: border-box; /* パディングを含めたサイズを設定 */
+    font-size: 1.5em; /* フォントサイズを大きく設定 */
+    line-height: 2.0; /* 行間を調整 */
 }
 
 .photo-Yasudakodo-Naibu img {
-    max-width: 400px; /* 写真の最大幅を指定 */
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+
+.photo-Yasudakodo-Naibu img {
+    max-width: 400px;
     height: auto;
     border-radius: 8px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 .FromChairperson {
-    display: flex; /* Use flexbox to align children */
-    flex-direction: column; /* Arrange introductions vertically */
-    align-items: center; /* Center the introductions horizontally */
-    gap: 40px; /* Space between introductions */
-    margin: 40px auto; /* Center the container and add top/bottom spacing */
-    padding: 20px; /* Padding inside the container */
-    max-width: 1000px; /* Same maximum width as .event-container */
-    background-color: #ffffff; /* Same background color as .event-container */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Same shadow as .event-container */
-    border-radius: 8px; /* Same border radius as .event-container */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    margin: 40px auto;
+    padding: 20px;
+    max-width: 1000px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
-
 
 .introduction {
-    display: flex; /* Arrange photo and text horizontally */
-    align-items: center; /* Vertically center items within introduction */
-    gap: 20px; /* Space between photo and text */
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
-
 
 .photos {
     display: flex;
     flex-direction: column;
-    align-items: center; /* 写真と名前を中央揃え */
-    justify-content: flex-start
+    align-items: center;
 }
 
 .photo-item {
-    width: 300px; /* 固定幅 */
-    height: 400px; /* 固定高さ */
+    width: 300px;
+    height: 400px;
     object-fit: cover;
     border-radius: 5px;
-    margin-bottom: 10px; /* 写真と名前の間のスペース */
+    margin-bottom: 10px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     border: 1px solid #000000;
 }
 
 .photo-text {
-    text-align: center; /* 名前を中央揃え */
+    text-align: center;
 }
 
 .photo-text h3 {
@@ -168,8 +269,8 @@ body {
 }
 
 .intro-text {
-    max-width: 600px; /* テキストの最大幅を制限 */
-    text-align: justify; /* テキストの均等配置 */
+    max-width: 600px;
+    text-align: justify;
 }
 
 .intro-text p {
@@ -177,9 +278,27 @@ body {
 }
 
 .serif-name {
-    font-family: serif; /* フォントをserifに設定 */
+    font-family: serif;
 }
 
 .Century-name {
-    font-family: Century;
+    font-family: "Century", serif; /* フォントを指定 */
+    font-size: 2em; /* フォントサイズを設定 */
+    font-weight: 800; /* フォントの太さを設定 */
+    color: #333; /* テキストの色を設定 */
+    text-align: center; /* テキストを中央揃え */
+    margin: 20px 0; /* 上下のマージンを設定 */
+    line-height: 1.2; /* 行間を設定 */
+}
+
+
+.Yumincho-name{
+    font-family: "游明朝", "YuMincho", serif;
+    font-weight:600;
+    color: #ffffff;
+}
+
+.Book-Antiqua-name{
+    font-family:"Book Antiqua", Palatino, serif;
+    font-weight: lighter;
 }

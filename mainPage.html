@@ -1,43 +1,55 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8" />
-    <title>東大杯</title>
-    <meta name="description" content="書籍「動くWebデザインアイディア帳」のサンプルサイトです">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <!--==============styles.cssにて制御===============-->
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    <!--link rel="stylesheet" type="text/css" href="styles2.css"-->
-    <!--==============レイアウトを制御する独自のCSSを読み込み===============-->
-    <link rel="stylesheet" type="text/css" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/reset.css">
-    <link rel="stylesheet" type="text/css" href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/5-4-1/css/5-4-1.css"> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>東大杯公式Webサイト</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
-  <div class="wrapper">
-    <ul class="tab">
-        <li><a href="#lunch">第19回東大杯</a></li>
-        <li><a href="#drink">About Us</a></li>
-        <li><a href="#dinner">英語スピーチの型について</a></li>
-    </ul>
-    <h1>第19回東大杯</h1>
+  <header>
+    <h1 class = Yumincho-name>第19回 東大杯 特設サイト</h1>
+    <nav class="gnav">
+        <ul class="menu">
+            <li><a href="mainPage.html">Home</a></li>
+            <li><a href= "Page2.html">応募者の方はこちら</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <div class="slideshow-container">
+<div class="wrapper">
+  <div class="content">
+    <!-- 左側にタイトルを追加 -->
+    <div class="title">
+      <h1 class = "Book-Antiqua-name">The 19th Oratorical Contest<br>For the University of Tokyo E.S.S. Torophy</h1>
+    </div>
+
+    <div class="slogan">スピーチは、あなたを変える。</div>
+
+    <div class ="Information-slidshow">
+      <div class="information">
+        <div>
+          <p>東京大学E.S.S. スピーチセクションによる<br>
+          国内最大規模の英語スピーチ大会</p>
+          <p>応募資格に制限はありません。</p>
+        </div>
+      </div>
+      <!-- スライドショーコンテナ -->
+      <div class="slideshow-container">
         <!-- スライド1 -->
         <div class="slide">
-          <img src="pictures/Slideshow1.jpeg" alt="Slide 1"> <!-- スライド1の画像 -->
+          <img src="pictures/Slideshow3.jpeg" alt="Slide 1"> <!-- スライド1の画像 -->
         </div>
     
         <!-- スライド2 -->
         <div class="slide">
-          <img src="pictures/Slideshow2.jpeg" alt="Slide 2"> <!-- スライド2の画像 -->
+          <img src="pictures/Slideshow1.jpeg" alt="Slide 2"> <!-- スライド2の画像 -->
         </div>
     
         <!-- スライド3 -->
         <div class="slide">
-          <img src="pictures/Slideshow3.jpeg" alt="Slide 3"> <!-- スライド3の画像 -->
+          <img src="pictures/Slideshow5.jpeg" alt="Slide 3"> <!-- スライド3の画像 -->
         </div>
     
         <!-- 前のスライドボタン -->
@@ -45,65 +57,70 @@
     
         <!-- 次のスライドボタン -->
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
-      </div>
-    
-      <!-- ドットナビゲーション -->
-      <div style="text-align:center">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-      </div>
-    
-      <script>
-        // JavaScriptコードはスライドショーの動作を制御します
-        let slideIndex = 1;
-        showSlides(slideIndex);
-    
-        function plusSlides(n) {
-          showSlides(slideIndex += n);
-        }
-    
-        function currentSlide(n) {
-          showSlides(slideIndex = n);
-        }
-    
-        function showSlides(n) {
-          let i;
-          let slides = document.getElementsByClassName("slide");
-          let dots = document.getElementsByClassName("dot");
-    
-          if (n > slides.length) { slideIndex = 1 }
-          if (n < 1) { slideIndex = slides.length }
-    
-          for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
+        <!-- ドットナビゲーション -->
+        <div class="dot-container">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+        <script>
+          // JavaScriptコードはスライドショーの動作を制御します
+          let slideIndex = 1;
+          showSlides(slideIndex);
+      
+          function plusSlides(n) {
+            showSlides(slideIndex += n);
           }
-    
-          for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
+      
+          function currentSlide(n) {
+            showSlides(slideIndex = n);
           }
-    
-          slides[slideIndex - 1].style.display = "block";
-          dots[slideIndex - 1].className += " active";
-        }
-      </script>
+      
+          function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("slide");
+            let dots = document.getElementsByClassName("dot");
+      
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+      
+            for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+            }
+      
+            for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+            }
+      
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+          }
+        </script>
+      </div>
+    </div>
   </div>
-    
-  <div id="lunch" class="area">
-          <div class="event-container">
-                <div class="event-caption">
-                    <h2>イベント詳細</h2>
-                    <p><strong>開催地:</strong> 東京大学本郷キャンパス 安田講堂</p>
-                    <p><strong>開催日時:</strong> 2025年2月23日（日）</p>
-                </div>
-                <div class="photo-Yasudakodo-Naibu">
-                    <img src="pictures/Yasudakodo-Naibu.jpg" alt="安田講堂内部の写真">
-                </div>
-          </div>
-          
+
+  
+</div>
+
+    <div class="area">
+        <div class="event-container">
+            <h1 class = "Century-name">イベント詳細</h1>
+            <div class = "event-information">
+              <div class="event-caption">
+                  <p><strong>主催:</strong> 東京大学E.S.Sスピーチセクション</p>
+                  <p><strong>開催地:</strong> 東京大学本郷キャンパス 安田講堂</p>
+                  <p><strong>開催日時:</strong> 2025年2月23日（日）</p>
+              </div>
+              <div class="photo-Yasudakodo-Naibu">
+                  <img src="pictures/Yasudakodo-Naibu.jpg" alt="安田講堂内部の写真">
+              </div>
+            </div>
+        </div>
+
         <div class="FromChairperson">
-          <h1 class="Century-name">実長より</h1>  
-          <div class="introduction">
+            <h1 class="Century-name">実行委員長より</h1>  
+            <div class="introduction">
                 <div class="photos">
                     <img src="pictures/AshidaSara.jpg" alt="Ashida Sara" class="photo-item">
                     <div class="photo-text">
@@ -111,59 +128,35 @@
                     </div>
                 </div>
                 <div class="intro-text">
-                  <p>初めまして。</p>
-
-                  <p>第19回東大杯実行委員長を務める芦田幸来と申します。当サイトをご覧いただき誠にありがとうございます。</p>
-                  
-                  <p>今年の東大杯のコンセプトは "Kaleidoscope" です。万華鏡を少し回せば全く違う光景を見ることができるように、私たちの周りにいて、同じような生活をしていても、実は全く違う経験や価値観を持っている方々がたくさんいます。</p>
-                  
-                  <p>その唯一無二の経験をぜひスピーチという形で発表していただきたい。そして、個性にあふれたスピーチをできるだけ多くの人々に聞いてほしい。このような考えからこのコンセプトに決定いたしました。</p>
-                  
-                  <p>この東大杯が、自分の気持ちを言葉にしてみる機会になれば幸いです。皆様のご応募を心からお待ちしております。</p>
+                    <p>初めまして。</p>
+                    <p>第19回東大杯実行委員長を務める芦田幸来と申します。当サイトをご覧いただき誠にありがとうございます。</p>
+                    <p>今年の東大杯のコンセプトは "Kaleidoscope" です。万華鏡を少し回せば全く違う光景を見ることができるように、私たちの周りにいて、同じような生活をしていても、実は全く違う経験や価値観を持っている方々がたくさんいます。</p>
+                    <p>その唯一無二の経験をぜひスピーチという形で発表していただきたい。そして、個性にあふれたスピーチをできるだけ多くの人々に聞いてほしい。このような考えからこのコンセプトに決定いたしました。</p>
+                    <p>この東大杯が、自分の気持ちを言葉にしてみる機会になれば幸いです。皆様のご応募を心からお待ちしております。</p>
                 </div>
             </div>
 
             <div class="introduction">
                 <div class="photos">
-                    <img src="pictures/NateKoichiro.jpg" alt="NateKoichiro" class="photo-item">
+                    <img src="pictures/NateKoichiro2.jpg" alt="NateKoichiro" class="photo-item">
                     <div class="photo-text">
                         <h3 class="serif-name">名手康一郎</h3>
                     </div>
                 </div>
                 <div class="intro-text">
-                  <p>第19回東大杯副実行委員長を務める名手康一郎と申します。</p>
-                  <p>東大杯に関心をもっていただき、ありがとうございます。</p>
-                  <p>みなさんは、英語スピーチにどのような印象を持っていらっしゃいますか？</p>
-                  <p>もしかすると、このサイトをご覧になっている方の中には、なじみがなく、少しハードルの高いものと感じている方もいらっしゃるかもしれません。しかし、私たちはそんなあなたにこそ、スピーチの魅力に触れてみてほしいと思っています。</p>
-                  <p>私たちはスピーチを「聞く」ことを通して自分の知らない世界に出会うことができます。</p>
-                  <p>しかし同時に、スピーチを「発表する」ことを通して知らなかった自分に出会うこともできます。</p>
-                  <p>そんなスピーチに触れる最高の機会を用意しております。</p>
-                  <p>皆様のご応募、ご来場をお待ちしております。あなたの毎日がちょっぴり変わるかもしれません。</p>
+                    <p>第19回東大杯副実行委員長を務める名手康一郎と申します。</p>
+                    <p>東大杯に関心をもっていただき、ありがとうございます。</p>
+                    <p>みなさんは、英語スピーチにどのような印象を持っていらっしゃいますか？</p>
+                    <p>もしかすると、このサイトをご覧になっている方の中には、なじみがなく、少しハードルの高いものと感じている方もいらっしゃるかもしれません。しかし、私たちはそんなあなたにこそ、スピーチの魅力に触れてみてほしいと思っています。</p>
+                    <p>私たちはスピーチを「聞く」ことを通して自分の知らない世界に出会うことができます。</p>
+                    <p>しかし同時に、スピーチを「発表する」ことを通して知らなかった自分に出会うこともできます。</p>
+                    <p>そんなスピーチに触れる最高の機会を用意しております。</p>
+                    <p>皆様のご応募、ご来場をお待ちしております。あなたの毎日がちょっぴり変わるかもしれません。</p>
                 </div>
             </div>
         </div>
     </div>
 
-    <div id="drink" class="area">
-        <h2>About Us</h2>
-        <ul>
-            <li>東京大学ESSスピーチセクションとは</li>
-            <li>実績</li>
-            <li>普段の活動</li>
-        </ul>
-    </div>
-
-    <div id="dinner" class="area">
-        <h2>英語スピーチとは</h2>
-        <ul>
-            <li>ソーシャルスピーチ、バリュスピーチ</li>
-            <li>型</li>
-            <li>Why you? Why now?</li>
-        </ul>
-    </div>
-</div>
-
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<script src="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/5-4-1/js/5-4-1.js"></script>
+  
 </body>
 </html>

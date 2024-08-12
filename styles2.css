@@ -1,89 +1,76 @@
-/* 全体の背景色を黒に設定 */
-body {
-    background-color: #000; /* 黒色 */
-    color: #000000; /* 文字色を白に */
-    font-family: Arial, sans-serif; /* フォント設定 */
-  }
-  
-  /*.slideshow-container {
-    position: relative;
-    max-width: 50%;
-    margin: auto;
-    background-color: #000; /* 黒色 */
-    /*z-index: 10;  高い値を設定 */
-/*}*/
-
-.slideshow-container {
-    position: relative;
-    max-width: 50%;
-    margin: 40px auto; /* スライドショーと他の要素の間に余白を設定 */
-    background-color: #000; /* 黒色 */
-    z-index: 2; /* areaより前面に配置 */
+.body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f8f8f8;
 }
 
-  /* 各スライドのスタイル */
-  .slide {
-    display: none;
-    position: absolute;
+
+
+.header {
     width: 100%;
-    height: 100%;
-    background-color: #000; /* 黒色 */
-  }
-  
-  /* スライド画像のスタイル */
-  .slide img {
-    width: 100%;
-    height: auto;
-  }
-  
-  /* 前後ボタンのスタイル */
-  .prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: #fff; /* ボタン文字色を白に */
-    background-color: rgba(0, 0, 0, 0.5); /* 半透明の黒背景 */
-    border: none;
-    border-radius: 0 3px 3px 0;
-    font-weight: bold;
-    font-size: 18px;
-    transition: background-color 0.3s ease;
-  }
-  
-  /* 左側のボタン */
-  .prev {
+    /* 幅いっぱいを指定 */
+    height: 50px;
+    /* 高さを50pxに指定 */
+    background: #4f1010;
+    /* 背景色にグレーを指定 */
+    padding: 20px 50px;
+    /* ヘッダーに上下左右それぞれ余白を指定 */
+    box-sizing: border-box;
+    /* padding分を含んで幅を100%にするため */
+    position: fixed;
+    /* ウィンドウを基準に画面に固定 */
+    top: 0;
+    /* 上下の固定位置を上から0pxにする */
     left: 0;
-    border-radius: 3px 0 0 3px;
-  }
-  
-  /* 右側のボタン */
-  .next {
-    right: 0;
-    border-radius: 3px;
-  }
-  
-  /* ボタンのホバー時のスタイル */
-  .prev:hover, .next:hover {
-    background-color: rgba(0, 0, 0, 0.8); /* ホバー時の背景色をダークに */
-  }
-  
-  /* ドットナビゲーションのスタイル */
-  .dot {
-    cursor: pointer;
-    height: 15px;
-    width: 15px;
-    margin: 0 2px;
-    background-color: #fff; /* ドットの色を白に */
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-  }
-  
-  /* アクティブなドットのスタイル */
-  .active {
-    background-color: #717171; /* アクティブなドットの色 */
-  }
-  
+    /* 左右の固定位置を左から0pxにする */
+    display: flex;
+    /* 中の要素を横並びにする */
+    align-items: center;
+    /* 中の要素を上下中央に並べる */
+    z-index: 3
+}
+
+header .gnav .menu {
+    display: flex;
+    /* 中の要素を横並びにする */
+}
+
+header .gnav .menu li {
+    list-style: none;
+    /* リストの[・]を消す */
+}
+
+header .gnav .menu li+li {
+    margin-left: 40px;
+    /* メニューそれぞれに間隔をあけるため */
+}
+
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1 {
+    font-size: 2em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2em;
+    color: #555;
+    line-height: 1.6;
+}
+
+.Yumincho-name {
+    font-family: "游明朝", "YuMincho", serif;
+    font-weight: 600;
+    color: #ffffff;
+}

@@ -174,9 +174,11 @@ header .gnav .menu li + li {
     visibility: visible;
     position: relative;
     z-index: 1; /* スライドショーより下に配置 */
-    margin-top: 0px;
+    margin-top: -30px;
     padding: 20px;
-    background-color: rgba(159, 159, 159, 0.332);
+    background: -moz-linear-gradient(top,rgba(255, 255, 255, 0),rgb(255, 255, 255));
+    background: -webkit-linear-gradient(top,rgba(255, 255, 255, 0),rgb(255, 255, 255));
+    background: linear-gradient(to bottom,rgba(255, 255, 255, 0),rgb(255, 255, 255));
 }
 
 .event-container {
@@ -240,6 +242,7 @@ header .gnav .menu li + li {
 .introduction {
     display: flex;
     align-items: center;
+    vertical-align: text-top;
     gap: 20px;
 }
 

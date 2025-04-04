@@ -1,0 +1,759 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #000000;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    
+    background-color: rgba(159, 159, 159, 0.332);
+    background-image: url("pictures/Yasudakodo-Naibu2.jpg");
+    background-size: cover; /* 画像をウィンドウ全体に広げる */
+    background-position: center; /* 中央をメインに表示 */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100vh; /* 縦幅をウィンドウの70%に設定 */
+    overflow-x: hidden;
+    overflow-y: auto; /* 縦方向のスクロールを許可 */
+}
+
+@media (max-width: 768px) {
+    /* スマホ専用のCSSを書く場所 */
+    
+    html, body {
+        background-size: cover; /* スマホでも背景画像を全体に広げる */
+        background-position: top; /* 画像の上部をメインに表示 */
+        background-attachment: scroll; /* スクロールに背景画像を合わせる */
+        white-space: normal; /* モバイルではテキストが折り返すように設定 */
+        overflow-x: hidden;
+    }
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+header {
+    width: 100%; /* 幅いっぱいを指定 */
+    height: 50px; /* 高さを50pxに指定 */
+    background: #4f1010; /* 背景色にグレーを指定 */
+    padding: 20px 50px; /* ヘッダーに上下左右それぞれ余白を指定 */
+    box-sizing: border-box; /* padding分を含んで幅を100%にするため */
+    position: fixed; /* ウィンドウを基準に画面に固定 */
+    top: 0; /* 上下の固定位置を上から0pxにする */
+    left: 0; /* 左右の固定位置を左から0pxにする */
+    display: flex; /* 中の要素を横並びにする */
+    align-items: center; /* 中の要素を上下中央に並べる */
+    z-index: 3
+}
+
+header .gnav .menu {
+    display: flex; /* 中の要素を横並びにする */
+}
+
+header .gnav .menu li {
+    list-style: none; /* リストの[・]を消す */
+}
+
+header .gnav .menu li + li {
+    margin-left: 40px; /* メニューそれぞれに間隔をあけるため */
+
+}
+@media (max-width: 768px) {
+    header {
+        padding: 10px 10px; /* パディングを少なくして画面の狭い領域に対応 */
+        height: auto; /* 高さを自動にして要素の高さに合わせる */
+        flex-direction: column; /* ヘッダー内の要素を縦並びにする */
+        align-items: flex-start; /* 要素を左揃えにする */
+    }
+
+    header h1 {
+        margin: 0 0 10px 0; /* 下部に少し余白を追加 */
+        padding-left: 5%; /* 左側に余白を追加 */
+        width: 90%; /* 左右の余白を均等に設定 */
+    }
+
+    header .gnav {
+        width: 100%;
+    }
+
+    header .gnav .menu {
+        width: 100%; /* メニューを幅いっぱいに広げる */
+        margin-top: 0px; /* 上部の余白を削除 */
+        display: flex; /* フレックスボックスを使用 */
+        justify-content: flex-start; /* メニューを左揃えにする */
+        padding-left: 5%; /* 左側に余白を追加 */
+    }
+
+    header .gnav .menu li {
+        margin-left: 0; /* メニュー間の左側余白を削除 */
+        margin-bottom: 10px; /* メニュー項目間の下に余白を追加 */
+    }
+
+    header .gnav .menu li + li {
+        margin-left: 10px; /* 隣接するメニュー項目間に少し余白を追加 */
+    }
+    .Yumincho-name{
+    font-family: "游明朝", "YuMincho", serif;
+    font-weight:600;
+    color: #ffffff;
+    font-size: 7vw;
+    }
+}
+
+
+
+.wrapper {
+    justify-content: space-between;
+    align-items: flex-start; /* 上下位置を揃える */
+    margin: 10px auto;
+    max-width: 90%; /* コンテンツの最大幅を設定 */
+}
+
+.slogan {
+    font-size: 3.0em;
+    font-family: "游明朝", "YuMincho", serif;
+    font-weight: 600;
+    color: #ffffff;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5); /* 影を追加 */
+    }
+    @media (max-width: 768px) {
+        .slogan {
+            margin-top: 40%;
+            font-size: 2.0em;
+        }
+    }
+    
+.content {
+    display: flex;
+    flex-direction: column; /* 要素を縦に並べる */
+    max-width: 90%; /* コンテンツの最大幅を設定 */
+    z-index: 2; /* 他の要素より前面に配置 */
+}
+
+.title {
+    font-size: 1.5em; /* タイトルのフォントサイズを設定 */
+    line-height: 1.4; /* 行間を調整 */
+    text-align: left; /* テキストを左揃え */
+    margin-top: 30px;
+    margin-left: 10px; /* 左側に60pxの余白を設定 */
+    color:#f8f8f8
+}
+@media (max-width: 768px) {
+    .title {
+        display: none;
+    }
+}
+
+.btn-sf-like {
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    text-decoration: none;
+    color: #FFF;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.73);
+    padding: 0.3em 0.5em;
+    background: #d40000;
+    border-top: solid 3px #ff3030;
+    border-bottom: solid 3px #ff3030;
+    transition: .4s;
+  }
+  
+  .btn-sf-like:hover {
+    text-shadow: -6px 0px 15px rgba(255, 255, 240, 0.83),
+                 6px 0px 15px rgba(255, 255, 240, 0.83);
+  }
+
+.Information-slidshow {
+    display: flex;
+    align-items: top; /* 垂直方向に中央揃え */
+    width: 100%; /* コンテナの幅を100%に設定 */
+    margin: 10px auto; /* 上下のマージンを減らして、コンテナを上に配置 */
+    box-sizing: border-box; /* パディングを含めたサイズを設定 */
+    color: #f8f8f8;
+    padding: 10px 0; /* 上下のパディングを追加して少し調整 */
+    position: relative; /* 位置を調整するために相対位置を設定 */
+    top: 0px; /* 上方向に80px移動 */
+}
+@media (max-width: 768px) {
+    .Information-slidshow {
+        flex-direction: column;
+    }
+}
+
+
+.information {
+    font-family: "游明朝", "YuMincho", serif;
+    font-size: 1.7em; /* テキストのフォントサイズを設定 */
+    line-height: 2.5; /* 行間を調整 */
+    text-align: left; /* テキストを左揃え */
+    margin-left: 20px; /* 左側に20pxの余白を設定 */
+    flex-shrink: 0; /* コンテンツが縮小されないようにする */
+}
+@media (max-width: 768px) {
+    .information {
+        font-size: 1em; /* テキストのフォントサイズを設定 */
+        line-height: 1.5; /* 行間を調整 */
+        text-align: left; /* テキストを左揃え */
+        margin-left: 10px; /* 左側に20pxの余白を設定 */
+        margin-bottom: 10px;
+    }
+}
+
+.slideshow-container {
+    position: relative;
+    max-width: 50%; /* スライドショーの最大幅を60%に設定 */
+    margin-left: 40px; /* 左側の余白を自動設定 */
+    z-index: 2; /* 他の要素より前面に配置 */
+    overflow: hidden; /* コンテナ内に収まるように */
+    flex-shrink: 0; /* スライドショーが縮小されないようにする */
+}
+@media(max-width: 768px){
+    .slideshow-container{
+        max-width:100% ;
+        display: block;
+        margin: 10px auto;
+    }
+}
+
+.slide {
+    display: none;
+    position: relative; /* スライド内の要素を相対的に配置 */
+    width: 100%; /* コンテナの幅に合わせる */
+    height: auto; /* 高さを自動調整 */
+}
+
+.slide img {
+    width: 100%; /* スライドの幅に合わせて表示 */
+    height: auto; /* 縦横比を維持 */
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%; /* スライドの中央に配置 */
+    padding: 16px;
+    color: #fff;
+    background-color: rgba(153, 153, 153, 0.5);
+    border: none;
+    font-weight: bold;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+    transform: translateY(-50%); /* ボタンの上下位置を中央に調整 */
+}
+
+.prev {
+    left: 10px; /* 左からの距離を設定 */
+}
+
+.next {
+    right: 10px; /* 右からの距離を設定 */
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+@media(max-width: 768px){
+    .dot{
+        height: 5px;
+        width: 5px;
+    }
+}
+
+.active {
+    background-color: #717171; /* アクティブなドットの色 */
+}
+
+.dot-container {
+    text-align: center;
+    position: relative;
+    top: -30px; /* スライドの下に配置 */
+}
+
+
+.active {
+    background-color: #717171;
+}
+
+.area {
+    display: block; 
+    visibility: visible;
+    position: relative;
+    z-index: 3; /* スライドショーより下に配置 */
+    margin-top: -30px;
+    padding: 20px;
+    background: -moz-linear-gradient(top,rgba(255, 255, 255, 0),rgb(255, 255, 255));
+    background: -webkit-linear-gradient(top,rgba(255, 255, 255, 0),rgb(255, 255, 255));
+    background: linear-gradient(to bottom,rgba(255, 255, 255, 0),rgb(255, 255, 255));
+}
+@media (max-width: 768px) {
+    .area {
+        margin-top: -100px; /* スマホではマイナスマージンを解除 */
+        padding: 10px; /* パディングを小さくしてコンテンツを詰める */
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgb(255, 255, 255));
+        z-index: 3; /* スライドショーや他の要素とのレイヤー調整 */
+    }
+}
+.event-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.event-information {
+    display: flex; /* フレックスボックスを使用して横並びにする */
+    justify-content:space-around; /* 子要素を左揃え */
+    align-items: flex-start; /* 子要素を垂直方向に上揃え */
+    width: 100%; /* 親コンテナに合わせた幅 */
+}
+
+@media(max-width: 768px){
+    .event-important-message{
+        font-family:  "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+        font-size: 10px;
+        font-weight: bold;
+        border:5px double #d40000;
+        padding: 0.5em 1em;
+    }
+    .event-important-message a{
+        color: #f75e5e;
+    }
+    
+    .underline{
+        background: linear-gradient(transparent 70%, #ff99ab 70%);
+    }
+}
+.event-important-message{
+    font-family:  "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ, Meiryo, Verdana, Helvetica, Arial, sans-serif;
+    font-size: 2.0em;
+    font-weight: bold;
+    border:5px double #d40000;
+    padding: 0.5em 1em;
+}
+.event-important-message a{
+    color: #f75e5e;
+}
+
+.underline{
+    background: linear-gradient(transparent 70%, #ff99ab 70%);
+}
+
+.small-fonts-header{
+    font-size: 0.5em;
+}
+
+.venue {
+    width: 40%; /* 会場案内の幅を親要素に合わせる */
+    text-align: center;
+}
+
+
+.stations {
+    width: 100%; /* 最寄り駅の情報の幅も揃える */
+    text-align: center;
+    padding: 10px;
+}
+
+.venue img {
+    width: 100%; /* 画像を親要素の幅いっぱいに広げる */
+    text-align: center;
+    height: auto; /* アスペクト比を維持 */
+    display: block; /* インライン要素の隙間を消す */
+    margin-top: 20px; /* 画像の上に余白を確保 */
+    border-radius: 10px; /* 角を丸める（任意） */
+}
+
+@media(max-width: 768px) {
+    .event-container {
+        align-items: center; /* コンテナ内の要素をすべて中央揃えにする */
+        text-align: left; /* テキストを中央揃えにする */
+        padding: 20px; /* パディングを調整 */
+    }
+
+    .event-information {
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* 子要素を中央に揃える */
+        align-items: center; /* 子要素を中央揃えにする */
+        text-align: center; /* テキストを中央揃えにする */
+    }
+
+    .event-caption {
+        margin-left: 0; /* 左側の余白を削除 */
+        padding: 10px 0; /* 上下のパディングを追加 */
+        font-size: 1em; /* フォントサイズを調整 */
+        line-height: 1.5; /* 行間を調整 */
+        text-align:left; /* テキストを中央揃えにする */
+    }
+
+    .venue{
+        display: flex;
+        flex-direction: column;
+        width:max-content;
+        margin:10px auto; 
+        max-width: 100%;
+        text-align:center; /* テキストを中央揃えにする */
+        align-items: center;
+    }
+    .maps {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 80vw;
+        max-width: 90vw;
+        margin: 0 10; /* 親要素内で中央配置 */
+        text-align: center;
+    }
+
+    .maps p {
+        display: block;
+        text-align: center;
+        margin: 5px auto; /* 確実に中央揃え */
+        width: 100%;
+    }
+
+    .maps iframe {
+        width: fit-content; /* 画面の90%を使う */
+        max-width: 400px;
+        height: 250px;
+        display: block;
+        margin: 10px auto; /* 中央寄せ */
+    }
+
+    .photo-Yasudakodo-Naibu img {
+        margin: 0 auto; /* 画像を中央に配置 */
+    }
+
+    .stations {
+        position: relative; /* 親要素の影響を受けにくくする */
+        width: fit-content; /* 必要な幅だけ取る */
+        max-width: 400px;
+        margin: 0 auto; /* 中央寄せ */
+        text-align: left;
+        padding: 10px;
+    }
+    .stations p{
+        text-align: center;
+    }
+    
+    
+    
+    .venue img {
+        width: 100%; /* 画像を親要素の幅いっぱいに広げる */
+        text-align: center;
+        height: auto; /* アスペクト比を維持 */
+        display: block; /* インライン要素の隙間を消す */
+        margin-top: 20px; /* 画像の上に余白を確保 */
+        border-radius: 10px; /* 角を丸める（任意） */
+    }
+}
+
+.h1 {
+    font-family: "Century", serif;
+    font-size: 2em;
+    font-weight: 800;
+    color: #333;
+    text-align: center;
+    margin: 20px 0;
+    line-height: 1.2;
+    position: relative; /* 疑似要素の基準にする */
+}
+
+.h1:after {
+    content: ""; /* 疑似要素に必要 */
+    display: block;
+    width: 50%; /* 長さを調整 */
+    height: 4px;
+    background: linear-gradient(to right, rgb(230, 90, 90), transparent);
+    position: absolute;
+    bottom: -8px; /* 見た目を調整 */
+    left: 25%; /* 中央に配置 */
+}
+
+
+
+
+
+.photo-Yasudakodo-Naibu img {
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+@media(max-width: 768px) {
+    .photo-Yasudakodo-Naibu img {
+        width: 80%; /* 画面の横幅に対して80%の幅に設定 */
+        max-width: 80%; /* 画面の横幅に対して最大80%の幅に設定 */
+        height: auto; /* 高さは自動調整 */
+    }
+}
+
+.timetable {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    border: double 5px #ff4545
+    /*box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);*/
+}
+
+.time-event {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
+
+.time {
+    width: 100px; /* 時間を固定幅で配置 */
+    font-weight: bold;
+    color: #555;
+}
+
+.event {
+    color: #333;
+}
+
+
+
+.Sponsors{
+    background-color: #f8f8f8;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    gap: 40px;
+    margin: 40px auto;
+    padding: 20px;
+    max-width: 1000px;
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    border-radius: 8px;
+}
+
+.Sponsors-list{
+    text-align: center;
+}
+
+.Sponsors img {
+        width: 200px; /* 画像の横幅を設定 */
+        height: auto; /* 高さを自動調整 */
+        margin: 30px; /* 画像同士の余白 */
+        outline: none; /* アウトラインを無効化 */
+        border: none; /* 枠線を無効化 */
+        box-shadow: none; /* 影を無効化 */
+  }
+  
+  .photo-Sponsors {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3分割 */
+    gap: 10px; /* 要素間の余白 */
+    justify-content: start; /* 左詰め */
+    width: 90%; /* 親要素の幅を少し狭めてはみ出しを防ぐ */
+    max-width: 1200px; /* 最大幅を設定（調整可） */
+    margin: 0 auto; /* 中央揃え */
+    overflow: hidden; /* はみ出し防止 */
+}
+
+.photo-Sponsors img {
+    width: 80%; /* 画像を少し小さく */
+    max-width: 150px; /* 画像の最大幅を制限（調整可） */
+    height: auto; /* アスペクト比維持 */
+    display: block; /* 余計な余白を削除 */
+    margin: 0 auto; /* 画像をセルの中央に */
+}
+
+
+
+.Sponsors-name li {
+    font-size: 1.5rem; /* 少し大きめのフォントにする */
+    padding: 8px 0; /* 各リストアイテムの間に余白を追加 */
+    line-height: 1.5; /* 行間を広めに */
+    font-weight: 500; /* 文字の太さを少し強調 */
+    text-align: center; /* 中央寄せ（お好みで変更） */
+}
+
+
+
+
+@media (max-width: 768px) {
+    .Sponsors {
+        background-color: #f8f8f8;
+        flex-direction: column;
+        margin: 0 auto;
+        gap: 20px; /* 隙間を調整 */
+        padding: 20px;
+        max-width: 90%; /* デバイス幅に基づく最大幅 */
+        border-radius: 8px;
+    }
+    
+    .Sponsors h1{
+        font-family: "Century", serif; /* フォントを指定 */
+        font-size: 1.4em; /* フォントサイズを設定 */
+        font-weight: 800; /* フォントの太さを設定 */
+        color: #333; /* テキストの色を設定 */
+        text-align: center; /* テキストを中央揃え */
+        margin: 20px 0; /* 上下のマージンを設定 */
+        line-height: 1.2; /* 行間を設定 */
+    }
+
+    .Sponsors img {
+        width: 100%; /* 親要素に合わせて幅を調整 */
+        max-width: 150px; /* 最大幅を設定 */
+        height: auto; /* 縦横比を保持して高さ調整 */
+        margin: 10px; /* 画像間の余白を縮小 */
+        outline: none;
+        border: none;
+        box-shadow: none;
+    }
+
+    .photo-Sponsors {
+        display: flex;
+        flex-wrap: wrap; /* 画面幅に収まらない場合に折り返し */
+        justify-content: center;
+        align-items: center;
+        gap: 15px; /* 狭い画面向けに隙間を小さく */
+        margin: 0 auto;
+    }
+    .Sponsors-name li {
+        font-size: 1.1rem; /* 少し大きめのフォントにする */
+        padding: 8px 0; /* 各リストアイテムの間に余白を追加 */
+        line-height: 1.5; /* 行間を広めに */
+        font-weight: 500; /* 文字の太さを少し強調 */
+        text-align: center; /* 中央寄せ（お好みで変更） */
+    }
+}
+
+
+.FromChairperson {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    margin: 40px auto;
+    padding: 20px;
+    max-width: 1000px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.introduction {
+    display: flex;
+    align-items: center;
+    vertical-align: text-top;
+    gap: 20px;
+}
+@media(max-width: 768px) {
+    .introduction{
+        flex-direction: column;
+    }
+}
+
+
+.photos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.photo-item {
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border: 1px solid #000000;
+}
+
+.photo-text {
+    text-align: center;
+}
+
+.photo-text h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.5em;
+}
+
+.intro-text {
+    max-width: 600px;
+    text-align: justify;
+}
+
+.intro-text p {
+    margin: 0 0 10px 0;
+}
+
+.serif-name {
+    font-family: serif;
+}
+
+.Century-name {
+    font-family: "Century", serif; /* フォントを指定 */
+    font-size: 2em; /* フォントサイズを設定 */
+    font-weight: 800; /* フォントの太さを設定 */
+    color: #333; /* テキストの色を設定 */
+    text-align: center; /* テキストを中央揃え */
+    margin: 20px 0; /* 上下のマージンを設定 */
+    line-height: 1.2; /* 行間を設定 */
+}
+
+.Century-name-sub1 {
+    font-family: "Century", serif; /* フォントを指定 */
+    font-size: 1.5em; /* フォントサイズを設定 */
+    font-weight: 800; /* フォントの太さを設定 */
+    color: #333; /* テキストの色を設定 */
+    text-align: center; /* テキストを中央揃え */
+    /*margin: 20px 0;  上下のマージンを設定 */
+    /*line-height: 1.2; /* 行間を設定 */
+}
+
+.Yumincho-name{
+    font-family: "游明朝", "YuMincho", serif;
+    font-weight:600;
+    color: #ffffff;
+}
+.Sponsors-name{
+    font-family: "游明朝", "YuMincho", serif;
+    font-weight:600;
+    font-size: 200%;
+    color: #000000;
+    line-height: 2;
+}
+
+.Book-Antiqua-name{
+    font-family:"Book Antiqua", Palatino, serif;
+    font-weight: lighter;
+}
+
+a {	
+    text-decoration: none;
+    color: #ededed;
+ }
+
+ @media screen and (min-width:768px){
+    .kai {
+      display: none;
+    }
+  }
+  

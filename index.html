@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>東大杯公式Webサイト</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" href="apple-touch-icon-180x180.png" sizes="180x180">
+<link rel="icon" type="image/png" href="android-chrome-192x192.png" sizes="192x192">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <h1 class = Yumincho-name>第19回 東大杯 公式サイト</h1>
+    <nav class="gnav">
+        <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href= "Page2.html">応募者の方はこちら</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="wrapper">
+  <div class="content">
+    <!-- 左側にタイトルを追加 -->
+    <div class="title">
+      <h1 class = "Book-Antiqua-name">The 19th Oratorical Contest<br>For the University of Tokyo E.S.S. Trophy</h1>
+    </div>
+
+    <div class="slogan">スピーチは、<br class="kai">あなたを変える。</div>
+
+    <div class ="Information-slidshow">
+      <div class="information">
+        <div>
+          <p>東京大学E.S.S. スピーチセクションによる<br>
+          国内最大規模の英語スピーチ大会</p>
+          <p>応募資格に制限はありません。</p>
+        </div>
+        <div>
+          <a href="#event-container" class="btn-sf-like">詳細情報はこちらから</a>
+        </div>
+      </div>
+      <!-- スライドショーコンテナ -->
+      <div class="slideshow-container">
+        <!-- スライド1 -->
+        <div class="slide">
+          <img src="pictures/Slideshow3.jpeg" alt="Slide 1"> <!-- スライド1の画像 -->
+        </div>
+    
+        <!-- スライド2 -->
+        <div class="slide">
+          <img src="pictures/Slideshow1.jpeg" alt="Slide 2"> <!-- スライド2の画像 -->
+        </div>
+    
+        <!-- スライド3 -->
+        <div class="slide">
+          <img src="pictures/Slideshow5.jpeg" alt="Slide 3"> <!-- スライド3の画像 -->
+        </div>
+    
+        <!-- 前のスライドボタン -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    
+        <!-- 次のスライドボタン -->
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        <!-- ドットナビゲーション -->
+        <div class="dot-container">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+        <script>
+          // JavaScriptコードはスライドショーの動作を制御します
+          let slideIndex = 1;
+          showSlides(slideIndex);
+      
+          function plusSlides(n) {
+            showSlides(slideIndex += n);
+          }
+      
+          function currentSlide(n) {
+            showSlides(slideIndex = n);
+          }
+      
+          function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("slide");
+            let dots = document.getElementsByClassName("dot");
+      
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+      
+            for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+            }
+      
+            for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+            }
+      
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+          }
+        </script>
+      </div>
+    </div>
+  </div>
+
+  
+</div>
+
+    <div class="area">
+        <div class="event-container" id="event-container">
+            <h1 class = "Century-name">大会詳細</h1>
+            <div class="event-important-message">
+              <ul>
+                <li><span class="underline">事前申し込み不要</span></li>
+                <li><span class="underline">入場無料・途中入退場可</span><span class="small-fonts-header">&nbsp;&nbsp;(※スピーチ中は不可)</span></li>
+              </ul>
+              <p>メルマガ配信中！登録は<a href="https://lu.ma/sxng27ch" target="_blank">こちら</a></p>
+            </div>
+
+
+            <div class = "event-information">
+              <div class="event-caption">
+                  <p class = Century-name-sub1><strong>主催</strong></p>
+                  <p class = Century-name-sub1>東京大学E.S.S.</p>
+                  <p class = Century-name-sub1><strong>日時</strong></p>
+                  <p class = Century-name-sub1>2025年2月23日（日）</p>
+                  <div class="timetable">
+                    <h1 class = Century-name-sub1>大会タイムテーブル</h1>
+                    <div class="time-event">
+                        <p class="time">10:30</p>
+                        <p class="event">開場（Door open）</p>
+                    </div>
+                    <div class="time-event">
+                        <p class="time">11:00</p>
+                        <p class="event">開会式（Opening ceremony）</p>
+                    </div>
+                    <div class="time-event">
+                        <p class="time">11:20</p>
+                        <p class="event">第一セッション（1st session）</p>
+                    </div>
+                    <div class="time-event">
+                        <p class="time">12:50</p>
+                        <p class="event">休憩（Intermission）</p>
+                    </div>
+                    <div class="time-event">
+                        <p class="time">13:50</p>
+                        <p class="event">第二セッション（2nd session）</p>
+                    </div>
+                    <div class="time-event">
+                        <p class="time">15:30</p>
+                        <p class="event">特別セッション（Special session）</p>
+                    </div>
+                    <div class="time-event">
+                        <p class="time">17:00</p>
+                        <p class="event">閉会式（Closing ceremony）</p>
+                    </div>
+                    <div class="time-event">
+                        <p class="time">18:00</p>
+                        <p class="event">終了（All over）</p>
+                    </div>
+                  </div>
+              </div>
+              <div class = "venue">
+                 <p class="Century-name-sub1"><strong>会場案内</strong></p>
+                <div class = "maps">
+                    <p><strong>開催地:</strong> 東京大学本郷キャンパス 安田講堂</p>
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3239.5201874453132!2d139.75970201210797!3d35.71342327246257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188dd1442c9c05%3A0xf6300e91d5641908!2z5p2x5Lqs5aSn5a2m5a6J55Sw6Kyb5aCC!5e0!3m2!1sja!2sjp!4v1738601523837!5m2!1sja!2sjp"
+                        width="400"
+                        height="300"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <div class="stations">
+                    <p><strong>最寄り駅</strong></p>
+                    <p>本郷三丁目駅（地下鉄丸の内線）より徒歩8分</p>
+                    <p>本郷三丁目駅（地下鉄大江戸線）より徒歩6分</p>
+                    <p>湯島駅又は根津駅（地下鉄千代田線）より徒歩8分</p>
+                    <p>東大前駅（地下鉄南北線）より徒歩1分</p>
+                    <p>春日駅（地下鉄三田線）より徒歩10分</p>
+                </div>                 
+                  <img src="pictures/Yasudakodo-Gaikan.jpg" alt="安田講堂外部の写真" class="venue-img">
+              </div>
+              </div>
+        </div>
+
+        <div class="Sponsors">
+          <h1 class = "Century-name">ご協賛企業様（五十音順、敬称略）</h1>
+            <div class = "Sponsors-list">
+              <ul style="list-style: none;" class = "Sponsors-name">
+                <li>AOZORAから揚げ専門店</li>
+                <li>欧風カレー ル・ムーラン</li>
+                <li >株式会社ダイヤモンドヒューマンリソース</li>
+                <li>国際教育振興会</li>
+                <li>国際ビジネスコミュニケーション協会（IIBC）</li>
+                <li >トップトラベルサービス</li>
+                <li>日本児童英語振興協会（JAPEC）</li>
+                <li >フローリストKT</li>
+                <li >文化放送キャリアパートナーズ</li>
+                <li>ぺラゴス株式会社</li>
+                <li >マイナビ</li>
+              </ul>
+            </div>
+            <div class="photo-Sponsors">
+                <img src="pictures/JAPEC_.png" alt="JAPEC様の写真">
+                <img src="pictures/pelagos.png" alt="pelagos様の写真">
+                <img src="pictures/AOZORA.jpg" alt="AOZORA様の写真">
+                <img src="pictures/le-moulin-logo.jpg" alt="ムーラン様の写真">
+                <img src="pictures/IEC_logo_square_JPN.png" alt = "国際教育振興会様の写真">
+            </div>
+       </div>
+
+        <div class="FromChairperson">
+            <h1 class="Century-name">実行委員長より</h1>  
+            <div class="introduction">
+                <div class="photos">
+                    <img src="pictures/AshidaSara.jpg" alt="Ashida Sara" class="photo-item">
+                    <div class="photo-text">
+                        <h3 class="serif-name">芦田幸来</h3>
+                    </div>
+                </div>
+                <div class="intro-text">
+                    <p>初めまして。</p>
+                    <p>第19回東大杯実行委員長を務める芦田幸来と申します。当サイトをご覧いただき誠にありがとうございます。</p>
+                    <p>今年の東大杯のコンセプトは "Kaleidoscope" です。万華鏡を少し回せば全く違う光景を見ることができるように、私たちの周りにいて、同じような生活をしていても、実は全く違う経験や価値観を持っている方々がたくさんいます。</p>
+                    <p>その唯一無二の経験をぜひスピーチという形で発表していただきたい。そして、個性にあふれたスピーチをできるだけ多くの人々に聞いてほしい。このような考えからこのコンセプトに決定いたしました。</p>
+                    <p>この東大杯が、自分の気持ちを言葉にしてみる機会になれば幸いです。皆様のご応募を心からお待ちしております。</p>
+                </div>
+            </div>
+
+            <div class="introduction">
+                <div class="photos">
+                    <img src="pictures/NateKoichiro2.jpg" alt="NateKoichiro" class="photo-item">
+                    <div class="photo-text">
+                        <h3 class="serif-name">名手康一郎</h3>
+                    </div>
+                </div>
+                <div class="intro-text">
+                    <p>第19回東大杯副実行委員長を務める名手康一郎と申します。</p>
+                    <p>東大杯に関心をもっていただき、ありがとうございます。</p>
+                    <p>みなさんは、英語スピーチにどのような印象を持っていらっしゃいますか？</p>
+                    <p>もしかすると、このサイトをご覧になっている方の中には、なじみがなく、少しハードルの高いものと感じている方もいらっしゃるかもしれません。しかし、私たちはそんなあなたにこそ、スピーチの魅力に触れてみてほしいと思っています。</p>
+                    <p>私たちはスピーチを「聞く」ことを通して自分の知らない世界に出会うことができます。</p>
+                    <p>しかし同時に、スピーチを「発表する」ことを通して知らなかった自分に出会うこともできます。</p>
+                    <p>そんなスピーチに触れる最高の機会を用意しております。</p>
+                    <p>皆様のご応募、ご来場をお待ちしております。あなたの毎日がちょっぴり変わるかもしれません。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  
+</body>
+</html>
